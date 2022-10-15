@@ -1,0 +1,49 @@
+version: '3.5'
+
+services:
+  db:
+    image: postgres:14.5
+    container_name: db
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    restart: always
+    networks:
+      - fullcycle
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=fullcycle
+      - POSTGRES_DB=fullcycle
+  app:
+    build:
+      context: node
+    container_name: app
+    entrypoint: dockerize -wait tcp://db:5432 -timeout 30s npm run start 
+    networks:
+      - fullcycle
+    tty: true
+    environment:
+      - PORT=3000
+      - POSTGRES_HOST=db
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=fullcycle
+      - POSTGRES_DB=fullcycle
+    depends_on:
+      - db
+  server:
+    build: 
+      context: server
+    container_name: server
+    ports:
+      - 8080:80
+    networks:
+      - fullcycle  
+    depends_on:
+      - db
+      - app
+
+networks:
+  fullcycle:
+    name: fullcycle
+    driver: bridge
+

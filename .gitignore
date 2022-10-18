@@ -1,0 +1,7 @@
+#Ignorar todas as pastas dos bancos de dados
+**/data/*
+
+##### NODE
+
+#Ignorar todas as node_modules
+**/node_modules

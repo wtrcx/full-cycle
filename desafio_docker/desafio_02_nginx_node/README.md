@@ -1,14 +1,13 @@
 # Docker - Desafio 02:
 ================================================================================
 
-## Importante!
-
-O exercício exigia que utilizassemos o MYSQL, porém optei pelo
-POSTGRES. Me informe caso haja um problema nesta escolha.
-
 ## Detalhes
 
-### Postgres (DB)
+A Aplicação está online no seguinte endereço caso queira fazer testes: [TRCX](https://fullcycle.trcx.com.br)
+
+![Logo do Markdown](img/markdown.png)
+
+### MySQL (DB)
 
 - Banco de Dados: fullcycle
 

@@ -5,7 +5,7 @@
 
 A Aplicação está online no seguinte endereço caso queira fazer testes: [TRCX](https://fullcycle.trcx.com.br)
 
-![Logo do Markdown](img/markdown.png)
+![Logo do Markdown](node/public/assets/captura.png)
 
 ### MySQL (DB)
 
